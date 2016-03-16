@@ -27,7 +27,7 @@ public class ContaTest {
 	@Test
 	public void testCarregar(){
 		
-		assertEquals(bla, ble);
+		assertEquals("Teste de carregar",bla, ble);
 		
 	}
 	
