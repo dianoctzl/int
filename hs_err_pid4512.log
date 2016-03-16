@@ -1,0 +1,182 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=4512, tid=5588
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_74-b02) (build 1.8.0_74-b02)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.74-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000013298800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=5588, stack(0x00000000142c0000,0x00000000143c0000)]
+
+Stack: [0x00000000142c0000,0x00000000143c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    432   23       4       java.lang.String::charAt (29 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000132fa000 JavaThread "Service Thread" daemon [_thread_blocked, id=6140, stack(0x00000000144c0000,0x00000000145c0000)]
+  0x00000000132f3800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=5752, stack(0x00000000143c0000,0x00000000144c0000)]
+=>0x0000000013298800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=5588, stack(0x00000000142c0000,0x00000000143c0000)]
+  0x0000000013297000 JavaThread "Attach Listener" daemon [_thread_blocked, id=5600, stack(0x00000000141c0000,0x00000000142c0000)]
+  0x0000000013294000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5980, stack(0x00000000140c0000,0x00000000141c0000)]
+  0x0000000002196800 JavaThread "Finalizer" daemon [_thread_blocked, id=4016, stack(0x0000000013ed0000,0x0000000013fd0000)]
+  0x000000000218c000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4508, stack(0x0000000013dd0000,0x0000000013ed0000)]
+  0x00000000020a0800 JavaThread "main" [_thread_in_vm, id=4700, stack(0x0000000001fa0000,0x00000000020a0000)]
+
+Other Threads:
+  0x0000000013266000 VMThread [stack: 0x0000000013cd0000,0x0000000013dd0000] [id=5800]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 9728K, used 696K [0x00000000f5e00000, 0x00000000f6880000, 0x0000000100000000)
+  eden space 8704K, 8% used [0x00000000f5e00000,0x00000000f5eae230,0x00000000f6680000)
+  from space 1024K, 0% used [0x00000000f6780000,0x00000000f6780000,0x00000000f6880000)
+  to   space 1024K, 0% used [0x00000000f6680000,0x00000000f6680000,0x00000000f6780000)
+ ParOldGen       total 22016K, used 0K [0x00000000e1a00000, 0x00000000e2f80000, 0x00000000f5e00000)
+  object space 22016K, 0% used [0x00000000e1a00000,0x00000000e1a00000,0x00000000e2f80000)
+ Metaspace       used 2340K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 263K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000011560000,0x0000000011660000] byte_map_base: 0x0000000010e53000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e830600
+ Begin Bits: [0x0000000011910000, 0x00000000120a8000)
+ End Bits:   [0x00000000120a8000, 0x0000000012840000)
+
+Polling page: 0x0000000000610000
+
+CodeCache: size=245760Kb used=1094Kb max_used=1094Kb free=244665Kb
+ bounds [0x00000000021a0000, 0x0000000002410000, 0x00000000111a0000]
+ total_blobs=248 nmethods=22 adapters=141
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.424 Thread 0x00000000132f3800 nmethod 18 0x00000000022ae9d0 code [0x00000000022aeb20, 0x00000000022aed10]
+Event: 0.424 Thread 0x00000000132f3800   19  s    3       java.lang.StringBuffer::append (13 bytes)
+Event: 0.424 Thread 0x00000000132f3800 nmethod 19 0x00000000022aed90 code [0x00000000022aef20, 0x00000000022af408]
+Event: 0.424 Thread 0x00000000132f3800   21       3       java.lang.String::equals (81 bytes)
+Event: 0.425 Thread 0x00000000132f3800 nmethod 21 0x00000000022af650 code [0x00000000022af7e0, 0x00000000022afd30]
+Event: 0.425 Thread 0x00000000132f3800   20       3       java.lang.String::getChars (62 bytes)
+Event: 0.426 Thread 0x00000000132f3800 nmethod 20 0x00000000022aff10 code [0x00000000022b00c0, 0x00000000022b04f8]
+Event: 0.426 Thread 0x00000000132f3800   22       3       java.util.Arrays::copyOfRange (63 bytes)
+Event: 0.427 Thread 0x00000000132f3800 nmethod 22 0x00000000022b0710 code [0x00000000022b0920, 0x00000000022b1458]
+Event: 0.428 Thread 0x0000000013298800   23       4       java.lang.String::charAt (29 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.207 Thread 0x00000000020a0800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000f5e07cc0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u74\6087\hotspot\srF’pê˛è ?
+Event: 0.208 Thread 0x00000000020a0800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000f5e07fa8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u74\6087\hotspot\src\share\vm\prims\j
+
+Events (10 events):
+Event: 0.413 loading class sun/nio/cs/ThreadLocalCoders
+Event: 0.414 loading class sun/nio/cs/ThreadLocalCoders done
+Event: 0.414 loading class sun/nio/cs/ThreadLocalCoders$1
+Event: 0.416 loading class sun/nio/cs/ThreadLocalCoders$Cache
+Event: 0.416 loading class sun/nio/cs/ThreadLocalCoders$Cache done
+Event: 0.416 loading class sun/nio/cs/ThreadLocalCoders$1 done
+Event: 0.416 loading class sun/nio/cs/ThreadLocalCoders$2
+Event: 0.416 loading class sun/nio/cs/ThreadLocalCoders$2 done
+Event: 0.416 loading class sun/nio/cs/UTF_8$Decoder
+Event: 0.417 loading class sun/nio/cs/UTF_8$Decoder done
+
+
+Dynamic libraries:
+0x00007ff693f60000 - 0x00007ff693f97000 	C:\Program Files\Java\jre1.8.0_74\bin\javaw.exe
+0x00007ffc07fc0000 - 0x00007ffc0816c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffc07b70000 - 0x00007ffc07cae000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffc05290000 - 0x00007ffc053a5000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffc03cb0000 - 0x00007ffc03d3e000 	C:\Windows\system32\apphelp.dll
+0x00007ffbfe610000 - 0x00007ffbfe663000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffc079c0000 - 0x00007ffc07a6a000 	C:\Windows\system32\msvcrt.dll
+0x00007ffc04ee0000 - 0x00007ffc04f0e000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffc05c80000 - 0x00007ffc05cd4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ffc05ce0000 - 0x00007ffc05e57000 	C:\Windows\system32\USER32.dll
+0x00007ffc07820000 - 0x00007ffc079b4000 	C:\Windows\system32\ole32.dll
+0x00007ffc05e60000 - 0x00007ffc0738b000 	C:\Windows\system32\SHELL32.dll
+0x00007ffc049f0000 - 0x00007ffc04a11000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ffc05ac0000 - 0x00007ffc05b6a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffbfd5b0000 - 0x00007ffbfd5ce000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007ffc076c0000 - 0x00007ffc07801000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffc075a0000 - 0x00007ffc075f9000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ffc05840000 - 0x00007ffc05a51000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ffc07450000 - 0x00007ffc075a0000 	C:\Windows\system32\GDI32.dll
+0x00007ffc05110000 - 0x00007ffc05125000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffc03680000 - 0x00007ffc03732000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ffc05be0000 - 0x00007ffc05c16000 	C:\Windows\system32\IMM32.DLL
+0x00007ffc07cb0000 - 0x00007ffc07e02000 	C:\Windows\system32\MSCTF.dll
+0x00007ffc02d60000 - 0x00007ffc02fdb000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.18006_none_623f33d3ecbe86e8\COMCTL32.dll
+0x000000005df40000 - 0x000000005e012000 	C:\Program Files\Java\jre1.8.0_74\bin\msvcr100.dll
+0x000000005e020000 - 0x000000005e8b0000 	C:\Program Files\Java\jre1.8.0_74\bin\server\jvm.dll
+0x00007ffbef2e0000 - 0x00007ffbef2e9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffbfcf20000 - 0x00007ffbfcf42000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffbfcd00000 - 0x00007ffbfcd0a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffc07b40000 - 0x00007ffc07b47000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffc05a60000 - 0x00007ffc05aba000 	C:\Windows\system32\WS2_32.dll
+0x00007ffbfce20000 - 0x00007ffbfce4a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffc07810000 - 0x00007ffc07819000 	C:\Windows\system32\NSI.dll
+0x00007ffc05240000 - 0x00007ffc0528f000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ffc03f10000 - 0x00007ffc03f38000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x000000005df30000 - 0x000000005df3f000 	C:\Program Files\Java\jre1.8.0_74\bin\verify.dll
+0x000000005df00000 - 0x000000005df29000 	C:\Program Files\Java\jre1.8.0_74\bin\java.dll
+0x000000005dee0000 - 0x000000005def6000 	C:\Program Files\Java\jre1.8.0_74\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: view.TestaTelas
+java_class_path (initial): C:\Users\Comercial.SP\Desktop\projeto\AAAAAA\bin;C:\Users\Comercial.SP\Desktop\projeto\mysql-connector-java-5.1.13-bin.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_74/bin/server;C:/Program Files/Java/jre1.8.0_74/bin;C:/Program Files/Java/jre1.8.0_74/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\CrSSL\bin;C:\Windows\system32;
+USERNAME=Comercial.SP
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 55 Stepping 8, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 55 stepping 8, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, clmul, erms, 3dnowpref, tsc, tscinvbit
+
+Memory: 4k page, physical 1983592k(156836k free), swap 4559404k(5000k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.74-b02) for windows-amd64 JRE (1.8.0_74-b02), built on Jan 29 2016 17:42:36 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Mar 09 12:50:08 2016
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
